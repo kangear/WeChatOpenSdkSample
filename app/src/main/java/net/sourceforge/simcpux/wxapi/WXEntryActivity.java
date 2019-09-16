@@ -174,8 +174,8 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 			SendAuth.Resp authResp = (SendAuth.Resp)resp;
 			final String code = authResp.code;
 			NetworkUtil.sendWxAPI(handler, String.format("https://api.weixin.qq.com/sns/oauth2/access_token?" +
-							"appid=%s&secret=%s&code=%s&grant_type=authorization_code", "wxd930ea5d5a258f4f",
-					"1d6d1d57a3dd063b36d917bc0b44d964", code), NetworkUtil.GET_TOKEN);
+							"appid=%s&secret=%s&code=%s&grant_type=authorization_code", Constants.APP_ID,
+					Constants.APP_SECRET, code), NetworkUtil.GET_TOKEN);
 		}
         finish();
 	}
